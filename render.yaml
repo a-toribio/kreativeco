@@ -2,10 +2,10 @@ services:
   - type: web
     name: kreativeco
     env: python
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn kreativeco.wsgi
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn kreativeco.wsgi:application"
+    staticPublishPath: staticfiles
+    autoDeploy: true
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: kreativeco.settings
-buildCommand: "./build.sh"
-startCommand: "gunicorn kreativeco.wsgi:application"
