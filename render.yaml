@@ -4,8 +4,7 @@ services:
     env: python
     buildCommand: "./build.sh"
     startCommand: "gunicorn kreativeco.wsgi:application"
-    staticPublishPath: staticfiles
     autoDeploy: true
-    envVars:
-      - key: DJANGO_SETTINGS_MODULE
-        value: kreativeco.settings
+    #envVars:
+      #- key: DJANGO_SETTINGS_MODULE
+      #  value: kreativeco.settings
