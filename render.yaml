@@ -7,3 +7,5 @@ services:
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: kreativeco.settings
+buildCommand: "./build.sh"
+startCommand: "gunicorn kreativeco.wsgi:application"
