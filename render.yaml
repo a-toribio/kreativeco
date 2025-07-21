@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: kreativeco
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn kreativeco.wsgi
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: kreativeco.settings
